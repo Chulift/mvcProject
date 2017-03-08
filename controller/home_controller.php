@@ -39,10 +39,8 @@ if (isset($_REQUEST['login'])) {
         $_SESSION['member'] = serialize($user);
         $_SESSION['type'] = $member['type'];
         if ($member['type'] == "ADMIN") {
-            //header("Location: ../view/admin_home.php");
             include "../view/admin_home.php";
         } else {
-            //header("Location: ../view/user_home.php");
             include "../view/user_home.php";
         }
     } else {
