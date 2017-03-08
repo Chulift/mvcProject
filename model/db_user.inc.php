@@ -1,5 +1,4 @@
 <?php
-//require_once "db_connect.inc.php";
 spl_autoload_register(function ($class_name) {
     require_once "class/" . $class_name . ".class.php";
 });
