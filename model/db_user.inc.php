@@ -1,5 +1,5 @@
 <?php
-require_once "db_connect.inc.php";
+//require_once "db_connect.inc.php";
 spl_autoload_register(function ($class_name) {
     require_once "class/" . $class_name . ".class.php";
 });
@@ -12,9 +12,7 @@ spl_autoload_register(function ($class_name) {
 
 function add_user()
 {
-    global $conn;
-    reconnect();
-    setUtf8();
+    $conn = Db::getInstance();
     $sql = "INSERT INTO members(username,passwd,name,surname) VALUES ('','','','')";
     try {
         $stmt = $conn->prepare($sql);
@@ -27,9 +25,7 @@ function add_user()
 function get_users()
 {
     $users = array();
-    global $conn;
-    reconnect();
-    setUtf8();
+    $conn = Db::getInstance();
     $sql = "SELECT * FROM members";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
@@ -44,9 +40,7 @@ function get_users()
 
 function get_user($username, $password)
 {
-    global $conn;
-    reconnect();
-    setUtf8();
+    $conn = Db::getInstance();
     $sql = "SELECT * FROM members WHERE username = '$username' and passwd = '$password' LIMIT 1";
     try {
         $stmt = $conn->prepare($sql);
@@ -64,9 +58,7 @@ function get_user($username, $password)
 
 function update_user($id, $new_username, $new_password, $new_name, $new_surname)
 {
-    global $conn;
-    reconnect();
-    setUtf8();
+    $conn = Db::getInstance();
 
     $sql = "UPDATE members SET username = '$new_username', passwd = '$new_password', name = '$new_name', surname = '$new_surname' WHERE id = '$id'";
     try {
@@ -79,9 +71,7 @@ function update_user($id, $new_username, $new_password, $new_name, $new_surname)
 
 function delete_user($id)
 {
-    global $conn;
-    reconnect();
-    setUtf8();
+    $conn = Db::getInstance();
 
     $sql = "DELETE FROM members WHERE id = '$id'";
     try {
