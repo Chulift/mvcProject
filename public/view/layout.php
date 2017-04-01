@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <style>
@@ -23,12 +24,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">HOME</a>
-      <a class="navbar-brand" href="asdsad/login.php">PRODUCT</a>
+      <a class="navbar-brand" href="home">HOME</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">LOG IN</a></li>
+        <li><a href="login">LOG IN</a></li>
       </ul>
     </div>
   </div>
